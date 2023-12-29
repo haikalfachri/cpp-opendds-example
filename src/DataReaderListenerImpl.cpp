@@ -46,11 +46,11 @@ void DataReaderListenerImpl::on_data_available(DDS::DataReader_ptr reader) {
                   << OpenDDS::DCPS::InstanceState::instance_state_mask_string(info.instance_state) << std::endl;
 
         if (info.valid_data) {
-            std::cout << "Hello: subject    = " << message.subject.in() << std::endl
-                      << "         subject_id = " << message.subject_id << std::endl
-                      << "         from       = " << message.from.in() << std::endl
-                      << "         count      = " << message.count << std::endl
-                      << "         text       = " << message.text.in() << std::endl;
+            std::cout << "Received: subject_id = " << message.subject_id << std::endl
+                      << "          subject    = " << message.subject.in() << std::endl 
+                      << "          from       = " << message.from.in() << std::endl
+                      << "          count      = " << message.count << std::endl
+                      << "          text       = " << message.text.in() << std::endl;
         }
 
     } else {

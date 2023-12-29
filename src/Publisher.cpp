@@ -104,19 +104,20 @@ int ACE_TMAIN(int argc, ACE_TCHAR* argv[]) {
         HelloWorld::Hello message;
         message.subject_id = 1;
 
-        message.from = "Comic Book Guy";
-        message.subject = "Review";
-        message.text = "Worst. Movie. Ever.";
+        message.from = "Publisher";
+        message.subject = "Hello";
+        message.text = "Hello World!";
         message.count = 0;
 
-        for (int i = 0; i < 10; ++i) {
+        while (true) {
             DDS::ReturnCode_t error = message_writer->write(message, DDS::HANDLE_NIL);
             ++message.count;
-            ++message.subject_id;
 
             if (error != DDS::RETCODE_OK) {
                 ACE_ERROR((LM_ERROR, ACE_TEXT("ERROR: %N:%l: main() -") ACE_TEXT(" write returned %d!\n"), error));
             }
+
+            ACE_OS::sleep(ACE_Time_Value(1)); 
         }
 
         // Wait for samples to be acknowledged

@@ -1,23 +1,34 @@
-## TEMP README
+## OpenDDS Example Using C++ and CMake
 
-1. Tiap buka terminal wsl wajib setenv dulu
-source '/mnt/c/OpenDDS-3.26.1/setenv.sh'
+> **_Note:_** This readme is for Windows with WSL terminal and using OpenDDS with CMake method.
 
-2. Generate .idl pake $path/to/opendds_idl /path/to/.idl file di folder src
-```
-cd src
-```
-```
-'/mnt/c/OpenDDS-3.26.1/bin/opendds_idl' '/mnt/c/Users/haika/OneDrive/Documents/MSIB5/cpp-opendds/src/HelloWorld.idl'
-```
-ntar muncul 3 file nama ujungnya ada xxxTypeSupport.idl, .cpp, .h
+1. Set environment every time open a new WSL terminal
+    ```
+    source 'path/to/opendds/setenv.sh'
+    ```
+    Example:
+    ```
+    source '/mnt/c/OpenDDS-3.26.1/setenv.sh'
+    ```
 
-3. Cmake quick start 
-```
-cmake .
-```
-4. Cmake build
-```
-cmake --build .
-```
-ntar muncul banyak file di folder opendds_generated sama muncul file publisher dan subscriber tanpa ekstensi
+2. Move to src directory
+    ```
+    cd src
+    ```
+
+3. Generate .idl file using `$path/to/opendds_idl/path/to/.idl`
+    
+    ```
+    '$DDS_ROOT/bin/opendds_idl' '/mnt/c/Users/haika/OneDrive/Documents/MSIB5/cpp-opendds/src/HelloWorld.idl'
+    ```
+    After the process is complete, 3 files will appear with the extension `<idl_filename>TypeSupport.idl, .cpp, .h`
+
+4. Cmake quick start 
+    ```
+    cmake .
+    ```
+5. Cmake build
+    ```
+    cmake --build .
+    ```
+    After processing is complete, many files will appear in the `opendds_generated` folder and also publisher and subscriber files to execute.
