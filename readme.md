@@ -19,7 +19,7 @@
 3. Generate .idl file using `$path/to/opendds_idl/path/to/.idl`
     
     ```
-    '$DDS_ROOT/bin/opendds_idl' '/mnt/c/Users/haika/OneDrive/Documents/MSIB5/cpp-opendds/src/HelloWorld.idl'
+    $DDS_ROOT/bin/opendds_idl '/mnt/c/Users/haika/OneDrive/Documents/MSIB5/cpp-opendds/src/HelloWorld.idl'
     ```
     After the process is complete, 3 files will appear with the extension `<idl_filename>TypeSupport.idl, .cpp, .h`
 
